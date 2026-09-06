@@ -1,5 +1,5 @@
 const Header = (props) => {
-  return <h1>{props.course}</h1>
+  return <h1>{props.course.name}</h1>
 }
 
 const Part = (props) => {
@@ -21,9 +21,9 @@ const Content = (props) => {
 
 
 const App = () => {
-  const course = 'half Stack application development'
-
-  const parts = [
+  const course = {
+    name:'Half Stack application development',
+    parts: [
     {
       name:'Fundamentals of React',
       exercises:10
@@ -37,6 +37,9 @@ const App = () => {
     exercises: 14
     }
   ]
+  } 
+
+ 
   /*
   const part1 = {
     name:'Fundamentals of React',
@@ -56,8 +59,8 @@ const App = () => {
   return (
     <div>
       <Header course = {course} />
-      <Content parts={parts}/>
-      <Total parts={parts} />
+      <Content parts={course.parts}/>
+      <Total parts={course.parts} />
     </div>
   )
 }
